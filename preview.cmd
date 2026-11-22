@@ -31,6 +31,8 @@ goto failed
 :serve
 echo 預覽網址為 http://127.0.0.1:%port%/
 echo 保持這個視窗開啟，按 Ctrl+C 即可停止。
+rem Open the preview URL in the default browser after the server starts
+start "" /b cmd /c "ping -n 3 127.0.0.1 >nul & start "" http://127.0.0.1:%port%/"
 "%python%" %versionFlag% -m http.server "%port%" --bind 127.0.0.1
 if not errorlevel 1 (
     popd
