@@ -1,3 +1,5 @@
 /articles/
-/assets/
+/assets/*
 README.txt
+!/assets/febri-ui/
+/output/
